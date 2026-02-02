@@ -25,10 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             GroupAssignment2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    DashboardScreen(Modifier.padding(innerPadding))
                 }
             }
         }
@@ -36,7 +33,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun DashboardScreen() {
+fun DashboardScreen(modifier: Modifier) {
     var counter by remember { mutableStateOf(0) }
 
     Column(
@@ -65,4 +62,8 @@ fun DashboardScreen() {
             onDecrement = { counter-- }
         )
     }
+}
+@Composable
+fun CounterControls(onIncrement : () -> Unit, onDecrement: () -> Unit){
+    // two buttons one for incre one for decre
 }
