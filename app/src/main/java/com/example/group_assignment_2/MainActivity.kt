@@ -37,7 +37,7 @@ fun DashboardScreen(modifier: Modifier) {
     var counter by remember { mutableStateOf(0) }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -65,7 +65,6 @@ fun DashboardScreen(modifier: Modifier) {
 }
 @Composable
 fun CounterControls(onIncrement : () -> Unit, onDecrement: () -> Unit){
-    // two buttons one for incre one for decre
     Row(verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center){
         Button(onClick = {onDecrement()}){
@@ -76,4 +75,10 @@ fun CounterControls(onIncrement : () -> Unit, onDecrement: () -> Unit){
             Text("Increment")
         }
     }
+}
+
+@Preview
+@Composable
+fun CounterControlsPreview(){
+    CounterControls({println("increase")}, {println("decrease")})
 }
