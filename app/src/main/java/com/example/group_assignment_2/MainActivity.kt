@@ -71,6 +71,7 @@ fun CounterControls(onIncrement : () -> Unit, onDecrement: () -> Unit){
         Button(onClick = {onDecrement()}){
             Text("Decrement")
         }
+        Spacer(modifier = Modifier.width(12.dp))
         Button(onClick = {onIncrement()}){
             Text("Increment")
         }
