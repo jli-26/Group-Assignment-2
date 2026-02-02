@@ -66,4 +66,13 @@ fun DashboardScreen(modifier: Modifier) {
 @Composable
 fun CounterControls(onIncrement : () -> Unit, onDecrement: () -> Unit){
     // two buttons one for incre one for decre
+    Row(verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center){
+        Button(onClick = {onDecrement()}){
+            Text("Decrement")
+        }
+        Button(onClick = {onIncrement()}){
+            Text("Increment")
+        }
+    }
 }
